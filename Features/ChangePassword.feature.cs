@@ -97,9 +97,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 6
-testRunner.When("the user enters the current password as ValidCurrentPassword, new password as Val" +
-                        "idNewPassword, confirms the new password ValidNewPassword & the user clicks the " +
-                        "Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user enters the current password, new password, and confirms the new password" +
+                        " using data from ChangePasswordwithvaliddata.json and clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
 testRunner.Then("a success message \"Password Changed Successfully\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -134,8 +133,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
-testRunner.When("the user enters the current password as InvalidCurrentPassword, new password as V" +
-                        "alidNewPassword, confirms the new password ValidNewPassword & the user clicks th" +
+testRunner.When("The user enters the current password, new password, and confirms the new password" +
+                        " using data from Changepasswordwithanincorrectcurrentpassword.json and clicks th" +
                         "e Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
@@ -171,9 +170,9 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
-testRunner.When("the user enters the current password as ValidCurrentPassword, new password as New" +
-                        "Password, confirms the new password NewPassword & the user clicks the Save butto" +
-                        "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user enters the current password, new password, and confirms the new password" +
+                        " using data from Changepasswordwithnewpasswordandconfirmpasswordmismatch.json an" +
+                        "d clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
 testRunner.Then("an error message \"Passwords does not match\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -206,8 +205,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
-testRunner.When("the user leaves the current password, new password, and confirm password fields e" +
-                        "mpty & the user clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user leaves all fields empty using data from Changepasswordwithempty.json and" +
+                        " clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
 testRunner.Then("an error message \"Please fill all the details before Submit\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -242,9 +241,9 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
-testRunner.When("the user enters the current password as ValidCurrentPassword, new password as Val" +
-                        "idCurrentPassword, confirms the new password ValidCurrentPassword & the user cli" +
-                        "cks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user enters the current password, new password, and confirms the new password" +
+                        " using data from Changepasswordwiththenewpasswordbeingthesameasthecurrentpasswor" +
+                        "d.json and clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
 testRunner.Then("an error message \"Current Password and New Password should not be same\" should be" +
@@ -280,8 +279,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ChangePassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
-testRunner.When("the user enters the current password as ValidCurrentPassword, new password as inv" +
-                        "alid, confirms the new password invalid & the user clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user enters the current password, new password, and confirms the new password" +
+                        " using data from Changepasswordwithinvaliddata.json and clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 39
 testRunner.Then("an error message \"New password does not meet the required format\" should be displ" +

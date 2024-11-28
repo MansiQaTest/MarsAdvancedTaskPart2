@@ -15,6 +15,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
        
         private IWebElement Withdraw => driver.FindElement(By.XPath("//button[contains(@class, 'ui negative basic button') and text()='Withdraw']"));
         private IWebElement Complete => driver.FindElement(By.XPath("//button[@class='ui positive basic button' and text()='Completed']"));
+        private IWebElement Completerequest => driver.FindElement(By.XPath("//button[@class='ui positive basic button' and text()='Complete']"));
         private IWebElement Accept => driver.FindElement(By.XPath("//button[@type='button' and contains(@class, 'ui primary basic button') and text()='Accept']"));
         private IWebElement Decline => driver.FindElement(By.XPath("//button[@type='button' and contains(@class, 'ui negative basic button') and text()='Decline']"));
         private IWebElement Review => driver.FindElement(By.XPath("//button[@class='ui positive basic button' and text()='Review']"));
@@ -23,7 +24,8 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         private IWebElement message => driver.FindElement(By.XPath(e_message));
 
         private string e_withdraw = "//button[contains(@class, 'ui negative basic button') and text()='Withdraw']";
-        private string e_complete = "//button[@class='ui positive basic button' and text()='Completed']\r\n";
+        private string e_complete = "//button[@class='ui positive basic button' and text()='Completed']";
+        private string e_completerequest = "//button[@class='ui positive basic button' and text()='Complete']";
         private string e_accept = "//button[@type='button' and contains(@class, 'ui primary basic button') and text()='Accept']";
         private string e_decline = "//button[@type='button' and contains(@class, 'ui negative basic button') and text()='Decline']";
         private string e_review = "//button[@class='ui positive basic button' and text()='Review']";
@@ -37,7 +39,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
 
         public void withdrawrequest()
         {
-            homepageObj.clickSentrequest();
+           homepageObj.clickSentrequest();
 
            WaitUtils.WaitToBeClickable(driver, "XPath", e_withdraw , 10);
            Withdraw.Click();
@@ -64,12 +66,21 @@ namespace MarsAdvancedTaskPart2.Pages.Components
             WaitUtils.WaitToBeClickable(driver, "XPath", e_accept, 10);
             Accept.Click();
         }
-        public void Completerequest() 
+        public void Completed() 
         {
             homepageObj.clickSentrequest();
 
             WaitUtils.WaitToBeClickable(driver, "XPath", e_complete, 10);
             Complete.Click();
+
+        }
+
+        public void Completerequestofreciver()
+        {
+            homepageObj.clickRecievedrequest();
+
+            WaitUtils.WaitToBeClickable(driver, "XPath", e_completerequest , 10);
+            Completerequest.Click();
 
         }
 

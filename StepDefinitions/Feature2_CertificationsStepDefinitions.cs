@@ -112,8 +112,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             certificationsObj.ClickAnyTab("Certifications");
         }
 
-        [When(@"User adds a new Certifications record from the JSON file")]
-        public void WhenUserAddsANewCertificationsRecordFromTheJSONFile()
+        [When(@"User adds a new Certifications record from the AddCertificate\.json")]
+        public void WhenUserAddsANewCertificationsRecordFromTheAddCertificate_Json()
         {
             RunCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\AddCertificate.json");
         }
@@ -151,8 +151,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"User adds a new Certifications record from the JSON file where name is empty")]
-        public void WhenUserAddsANewCertificationsRecordFromTheJSONFileWhereNameIsEmpty()
+        [When(@"User adds a new Certifications record from the AddCertificateDatawithempty\.json where name is empty")]
+        public void WhenUserAddsANewCertificationsRecordFromTheAddCertificateDatawithempty_JsonWhereNameIsEmpty()
         {
             RunCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\AddCertificateDatawithempty.json");
         }
@@ -197,8 +197,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             RunCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\AddCertificateWithDuplicateEntry.json");
         }
 
-        [When(@"User adds multiple Certifications records from the JSON file")]
-        public void WhenUserAddsMultipleCertificationsRecordsFromTheJSONFile()
+        [When(@"User adds multiple Certifications records from the CreateMultipleCertificateData\.json")]
+        public void WhenUserAddsMultipleCertificationsRecordsFromTheCreateMultipleCertificateData_Json()
         {
             RunCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\CreateMultipleCertificateData.json");
         }
@@ -268,15 +268,15 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"User adds multiple Certificationss records from the JSON file with invalid input")]
-        public void WhenUserAddsMultipleCertificationssRecordsFromTheJSONFileWithInvalidInput()
+        [When(@"User adds Certification records from the CreateCertificateDatawithInvalidinput\.json with invalid input")]
+        public void WhenUserAddsCertificationRecordsFromTheCreateCertificateDatawithInvalidinput_JsonWithInvalidInput()
         {
             RunCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\CreateCertificateDatawithInvalidinput.json");
 
         }
 
-        [When(@"User deletes the Certifications record from the JSON file")]
-        public void WhenUserDeletesTheCertificationsRecordFromTheJSONFile()
+        [When(@"User deletes the Certifications record from the DeleteCertDataWhichisinthelist\.json")]
+        public void WhenUserDeletesTheCertificationsRecordFromTheDeleteCertDataWhichisinthelist_Json()
         {
             RunDeleteCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\DeleteCertDataWhichisinthelist.json");
         }
@@ -336,8 +336,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"User deletes a Certifications record that is not in the list from the JSON file")]
-        public void WhenUserDeletesACertificationsRecordThatIsNotInTheListFromTheJSONFile()
+        [When(@"User deletes a Certifications record that is not in the list from the DeleteCertDataWhichisnotinthelist")]
+        public void WhenUserDeletesACertificationsRecordThatIsNotInTheListFromTheDeleteCertDataWhichisnotinthelist()
         {
             RunDeleteCertificateTest(@"D:\MarsAdvancedTaskPart2\TestData\DeleteCertDataWhichisnotinthelist.json");
 

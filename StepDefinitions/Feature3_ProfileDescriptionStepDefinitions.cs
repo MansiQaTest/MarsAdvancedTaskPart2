@@ -68,9 +68,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         {
             profileDescriptionObj.ClickEditicon();
         }
-
-        [When(@"the user enters a valid description from the JSON file & clicks the Save button")]
-        public void WhenTheUserEntersAValidDescriptionFromTheJSONFileClicksTheButton()
+        [When(@"the user enters a valid description from the AddDescription\.json file & clicks the Save button")]
+        public void WhenTheUserEntersAValidDescriptionFromTheAddDescription_JsonFileClicksTheSaveButton()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescription.json");
         }
@@ -117,8 +116,9 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"the user enters an empty description from the JSON file & clicks the Save button")]
-        public void WhenTheUserEntersAnEmptyDescriptionFromTheJSONFile()
+
+        [When(@"the user enters an empty description from the AddDescriptionwithempty\.json file & clicks the Save button")]
+        public void WhenTheUserEntersAnEmptyDescriptionFromTheAddDescriptionwithempty_JsonFileClicksTheSaveButton()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescriptionwithempty.json");
         }
@@ -150,8 +150,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"the user enters a description with the Maximum Character Limit from the JSON file & clicks the Save button")]
-        public void WhenTheUserEntersADescriptionWithExactlyCharactersFromTheJSONFile()
+        [When(@"the user enters a description with the Maximum Character Limit from the AddDescriptionwithMaxlimit\.json file & clicks the Save button")]
+        public void WhenTheUserEntersADescriptionWithTheMaximumCharacterLimitFromTheAddDescriptionwithMaxlimit_JsonFileClicksTheSaveButton()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescriptionwithMaxlimit.json");
         }
@@ -197,9 +197,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-
-        [When(@"the user enters a description with exceed character limit from the JSON file")]
-        public void WhenTheUserEntersADescriptionWithExceedCharacterLimitFromTheJSONFile()
+        [When(@"the user enters a description with exceed character limit from the AddDescriptionwithmorethanlimit\.json file")]
+        public void WhenTheUserEntersADescriptionWithExceedCharacterLimitFromTheAddDescriptionwithmorethanlimit_JsonFile()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescriptionwithmorethanlimit.json");
 
@@ -241,8 +240,9 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         }
 
 
-        [Given(@"User enters a valid description from the JSON file & clicks the Save button")]
-        public void GivenUserEntersAValidDescriptionFromTheJSONFileClicksTheSaveButton()
+
+        [Given(@"User enters a valid description from the AddDescription\.json file & clicks the Save button")]
+        public void GivenUserEntersAValidDescriptionFromTheAddDescription_JsonFileClicksTheSaveButton()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescription.json");
         }
@@ -296,8 +296,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"the user enters a description from the JSON file & clicks the Save button")]
-        public void WhenTheUserEntersADescriptionFromTheJSONFileClicksTheSaveButton()
+        [When(@"the user enters a description from the AddDescriptionwithHTMLScript\.json file & clicks the Save button")]
+        public void WhenTheUserEntersADescriptionFromTheAddDescriptionwithHTMLScript_JsonFileClicksTheSaveButton()
         {
             RunDescriptionTest(@"D:\MarsAdvancedTaskPart2\TestData\AddDescriptionwithHTMLScript.json");
 

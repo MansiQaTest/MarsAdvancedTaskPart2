@@ -97,7 +97,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.When("User adds a new Certifications record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Certifications record from the AddCertificate.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
 testRunner.Then("the new record should be successfully created based on JSON data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -130,7 +130,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.When("User adds a new Certifications record from the JSON file where name is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Certifications record from the AddCertificateDatawithempty.json w" +
+                        "here name is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
 testRunner.Then("Error message \"Please enter Certification Name, Certification From and Certificat" +
@@ -164,7 +165,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-testRunner.When("User adds a new Certifications record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Certifications record from the AddCertificate.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
 testRunner.And("User tries to add the same Certifications record again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -200,7 +201,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
-testRunner.When("User adds multiple Certifications records from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds multiple Certifications records from the CreateMultipleCertificateData." +
+                        "json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
 testRunner.Then("All Certifications records should be successfully created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -233,7 +235,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
-testRunner.When("User adds multiple Certificationss records from the JSON file with invalid input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds Certification records from the CreateCertificateDatawithInvalidinput.js" +
+                        "on with invalid input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
 testRunner.Then("Error message \"Please enter valid data.\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -266,10 +269,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
-testRunner.When("User adds a new Certifications record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Certifications record from the AddCertificate.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
-testRunner.And("User deletes the Certifications record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User deletes the Certifications record from the DeleteCertDataWhichisinthelist.js" +
+                        "on", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
 testRunner.Then("the Certifications record should be successfully deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -302,10 +306,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Certifications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 47
-testRunner.When("User adds a new Certifications record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Certifications record from the AddCertificate.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
-testRunner.And("User deletes a Certifications record that is not in the list from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User deletes a Certifications record that is not in the list from the DeleteCertD" +
+                        "ataWhichisnotinthelist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 49
 testRunner.Then("the Certifications record should not be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

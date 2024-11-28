@@ -10,6 +10,9 @@ using MarsAdvancedTaskPart2.Pages;
 using MarsAdvancedTaskPart2.Pages.Components.Profilepage;
 using MarsAdvancedTaskPart2.Pages.Components;
 using MarsAdvancedTaskPart2.TestModel;
+using OpenQA.Selenium.Support.UI;
+
+
 
 namespace MarsAdvancedTaskPart2.Utils
 {
@@ -38,7 +41,11 @@ namespace MarsAdvancedTaskPart2.Utils
             extent = new ExtentReports();
             extent.AttachReporter(sparkReporter);
 
-            driver = new ChromeDriver();
+            var chromeDriverService = ChromeDriverService.CreateDefaultService(@"D:\MarsAdvancedTaskPart2\bin\Debug\net6.0");
+            var options = new ChromeOptions();
+            driver = new ChromeDriver(chromeDriverService, options); 
+
+            //driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("http://localhost:5000/Home");
 
@@ -51,7 +58,58 @@ namespace MarsAdvancedTaskPart2.Utils
             var testName = TestContext.CurrentContext.Test.Name;
             test = extent.CreateTest(testName);
            
+            cleanupData();
+           
         }
+
+        public void cleanupData()
+        {
+            try
+            {
+                
+                loginPageObj.Loginsteps();
+                
+                // Perform cleanup operations
+                educationObj.CleanEducationData();
+                certificateObj.CleancertificateData();
+                manageListingsObj.CleanlistingData();
+               
+                // Sign out
+                SignOut();
+
+                // Log in again if needed
+                loginPageObj.Loginsteps2();
+
+                // Perform cleanup operations again
+                educationObj.CleanEducationData();
+                certificateObj.CleancertificateData();
+                manageListingsObj.CleanlistingData();
+
+                // Sign out again
+                SignOut();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during cleanup: {ex.Message}");
+            }
+        }       
+
+        
+        public void SignOut()
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement signoutButton = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//button[@class='ui green basic button']")));
+                signoutButton.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to sign out: {ex.Message}");
+            }
+        }
+
+
 
         public static void TakeScreenshotWithPngFormat()
         {

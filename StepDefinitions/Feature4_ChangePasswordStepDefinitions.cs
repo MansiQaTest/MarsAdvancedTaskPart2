@@ -75,8 +75,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             AccountDetailsDropdownObj.ClickChangePassword();
         }
 
-        [When(@"the user enters the current password as ValidCurrentPassword, new password as ValidNewPassword, confirms the new password ValidNewPassword & the user clicks the Save button")]
-        public void WhenTheUserEntersTheCurrentPasswordAsValidCurrentPasswordNewPasswordAsValidNewPasswordConfirmsTheNewPasswordValidNewPasswordTheUserClicksTheSaveButton()
+        [When(@"The user enters the current password, new password, and confirms the new password using data from ChangePasswordwithvaliddata\.json and clicks the Save button")]
+        public void WhenTheUserEntersTheCurrentPasswordNewPasswordAndConfirmsTheNewPasswordUsingDataFromChangePasswordwithvaliddata_JsonAndClicksTheSaveButton()
         {
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\ChangePasswordwithvaliddata.json");
         }
@@ -108,8 +108,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"the user enters the current password as InvalidCurrentPassword, new password as ValidNewPassword, confirms the new password ValidNewPassword & the user clicks the Save button")]
-        public void WhenTheUserEntersTheCurrentPasswordAsInvalidCurrentPasswordNewPasswordAsValidNewPasswordConfirmsTheNewPasswordValidNewPasswordTheUserClicksTheSaveButton()
+        [When(@"The user enters the current password, new password, and confirms the new password using data from Changepasswordwithanincorrectcurrentpassword\.json and clicks the Save button")]
+        public void WhenTheUserEntersTheCurrentPasswordNewPasswordAndConfirmsTheNewPasswordUsingDataFromChangepasswordwithanincorrectcurrentpassword_JsonAndClicksTheSaveButton()
         {
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\Changepasswordwithanincorrectcurrentpassword.json");
 
@@ -144,26 +144,27 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"the user enters the current password as ValidCurrentPassword, new password as NewPassword, confirms the new password NewPassword & the user clicks the Save button")]
-        public void WhenTheUserEntersTheCurrentPasswordAsValidCurrentPasswordNewPasswordAsNewPasswordConfirmsTheNewPasswordNewPasswordTheUserClicksTheSaveButton()
+        [When(@"The user enters the current password, new password, and confirms the new password using data from Changepasswordwithnewpasswordandconfirmpasswordmismatch\.json and clicks the Save button")]
+        public void WhenTheUserEntersTheCurrentPasswordNewPasswordAndConfirmsTheNewPasswordUsingDataFromChangepasswordwithnewpasswordandconfirmpasswordmismatch_JsonAndClicksTheSaveButton()
         {
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\Changepasswordwithnewpasswordandconfirmpasswordmismatch.json");
         }
 
-        [When(@"the user leaves the current password, new password, and confirm password fields empty & the user clicks the Save button")]
-        public void WhenTheUserLeavesTheCurrentPasswordNewPasswordAndConfirmPasswordFieldsEmptyTheUserClicksTheSaveButton()
+        [When(@"The user leaves all fields empty using data from Changepasswordwithempty\.json and clicks the Save button")]
+        public void WhenTheUserLeavesAllFieldsEmptyUsingDataFromChangepasswordwithempty_JsonAndClicksTheSaveButton()
         {
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\Changepasswordwithempty.json");
         }
 
-        [When(@"the user enters the current password as ValidCurrentPassword, new password as ValidCurrentPassword, confirms the new password ValidCurrentPassword & the user clicks the Save button")]
-        public void WhenTheUserEntersTheCurrentPasswordAsValidCurrentPasswordNewPasswordAsValidCurrentPasswordConfirmsTheNewPasswordValidCurrentPasswordTheUserClicksTheSaveButton()
+
+        [When(@"The user enters the current password, new password, and confirms the new password using data from Changepasswordwiththenewpasswordbeingthesameasthecurrentpassword\.json and clicks the Save button")]
+        public void WhenTheUserEntersTheCurrentPasswordNewPasswordAndConfirmsTheNewPasswordUsingDataFromChangepasswordwiththenewpasswordbeingthesameasthecurrentpassword_JsonAndClicksTheSaveButton()
         {
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\Changepasswordwiththenewpasswordbeingthesameasthecurrentpassword.json");
         }
 
-        [When(@"the user enters the current password as ValidCurrentPassword, new password as invalid, confirms the new password invalid & the user clicks the Save button")]
-        public void WhenTheUserEntersTheCurrentPasswordAsValidCurrentPasswordNewPasswordAsInvalidConfirmsTheNewPasswordInvalidTheUserClicksTheSaveButton()
+        [When(@"The user enters the current password, new password, and confirms the new password using data from Changepasswordwithinvaliddata\.json and clicks the Save button")]
+        public void WhenTheUserEntersTheCurrentPasswordNewPasswordAndConfirmsTheNewPasswordUsingDataFromChangepasswordwithinvaliddata_JsonAndClicksTheSaveButton()
         {           
             RunChangePasswordTest(@"D:\MarsAdvancedTaskPart2\TestData\Changepasswordwithinvaliddata.json");
         }      

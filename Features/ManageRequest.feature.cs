@@ -94,7 +94,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -130,7 +131,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 14
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -166,7 +168,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 21
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -205,7 +208,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 29
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 30
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -244,7 +248,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 37
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 38
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -296,7 +301,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 49
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 50
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -336,7 +342,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 57
-  testRunner.Given("the Skill Owner logs into Mars and creates a skill and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("the Skill Owner logs into Mars and creates a skill from AddManagelistingData.json" +
+                        " and logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 58
   testRunner.And("the Requester logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

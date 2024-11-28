@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome with Custom Path",
+      "type": "chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+    }
+  ]
+}

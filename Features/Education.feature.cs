@@ -97,7 +97,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.When("User adds a new Education record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Education record from the AddEducation.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
 testRunner.Then("the new record should be successfully created based on JSON data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -130,7 +130,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-testRunner.When("User adds a new Education record from the JSON file where name is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Education record from the AddEducationDatawithempty.json where na" +
+                        "me is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 15
 testRunner.Then("Error message \"Please enter all the fields\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -163,10 +164,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
-testRunner.When("User adds a new Education record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Education record from the AddEducation.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
-testRunner.And("User tries to add the same Education record again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User tries to add the same Education record again from the AddEducationWithDuplic" +
+                        "ateEntry.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
 testRunner.Then("Error message \"This information is already exist.\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -199,7 +201,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
-testRunner.When("User adds multiple Education records from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds multiple Education records from the CreateEduMultipleData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 28
 testRunner.Then("All Education records should be successfully created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -232,7 +234,8 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
-testRunner.When("User adds multiple Educations records from the JSON file with invalid input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds Education records from the CreateEducationDatawithinvalidinput.json wit" +
+                        "h invalid input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
 testRunner.Then("Error message \"Please enter valid data.\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -265,10 +268,10 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 39
-testRunner.When("User adds a new Education record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Education record from the AddEducation.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 40
-testRunner.And("User deletes the Education record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User deletes the Education record from the DeleteEduDataWhichisinthelist.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
 testRunner.Then("the Education record should be successfully deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -301,10 +304,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to Education tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
-testRunner.When("User adds a new Education record from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User adds a new Education record from the AddEducation.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 47
-testRunner.And("User deletes a Education record that is not in the list from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User deletes a Education record that is not in the list from DeleteEduDataWhichis" +
+                        "notinthelist.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 48
 testRunner.Then("the Education record should not be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

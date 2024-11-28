@@ -17,6 +17,9 @@ namespace MarsAdvancedTaskPart2.Pages.Components
     public class ManageListings : CommonDriver
     {
         Homepage homepageObj;
+        LoginPage loginPageObj;
+        ManageRequests manageRequestsObj;
+        CommonDriver commonDriver;
         private IWebElement ShareSkillButton => driver.FindElement(By.XPath("//div[@class='right item']//a[@class='ui basic green button']"));
         private IWebElement ManageListingButton => driver.FindElement(By.XPath("//div[@class='right item']//a[@class='ui basic green button']"));
         private IWebElement Editicon => driver.FindElement(By.XPath("//button[i[@class='outline write icon']]"));
@@ -47,9 +50,15 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         private IWebElement successmessage => driver.FindElement(By.XPath(e_successmessage));
         private IWebElement message => driver.FindElement(By.XPath(e_message));
         private IWebElement cancelButton => driver.FindElement(By.XPath(e_cancelButton));
+        private IWebElement tabOption => driver.FindElement(By.XPath("//a[text()='Manage Listings']"));
+        private IWebElement Withdraw => driver.FindElement(By.XPath("//button[contains(@class, 'ui negative basic button') and text()='Withdraw']"));
+
+        private string e_waitForTab = "//a[text()='Manage Listings']";
+        private string e_withdraw = "//button[contains(@class, 'ui negative basic button') and text()='Withdraw']";
+        private IWebElement Completerequest => driver.FindElement(By.XPath("//button[@class='ui positive basic button' and text()='Complete']"));
 
         private IWebElement ManageListingList => driver.FindElement(By.XPath("//*[@id=\"listing-management-section\"]/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]"));
-
+        private string e_completerequest = "//button[@class='ui positive basic button' and text()='Complete']";
         private string e_errormessage = "//div[@class='ns-box ns-growl ns-effect-jelly ns-type-error ns-show']";
         private string e_titleXPath = "//*[@id=\"service-listing-section\"]/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input";
         private string e_successmessage = "//div[@class='ns-box ns-growl ns-effect-jelly ns-type-success ns-show']";
@@ -81,6 +90,9 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         public ManageListings()
         {
             homepageObj = new Homepage();
+            loginPageObj = new LoginPage();
+            manageRequestsObj = new ManageRequests();
+            commonDriver = new CommonDriver();
         }
         public void view()
         {
@@ -89,7 +101,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         }
         public void CreateShareSkill(ManageListingsModel AddShareSkill)
         {
-          
+
             // Wait for and click the 'Add New' button
             WaitUtils.WaitToBeClickable(driver, "XPath", e_shareskillbutton, 10);
             ShareSkillButton.Click();
@@ -189,7 +201,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         }
         public void UpdateManageListing(ManageListingsModel EditManageListing)
         {
-           // homepageObj.clickmanagelisting();
+            // homepageObj.clickmanagelisting();
             // Wait for any popups to disappear
             //WaitForPopupToDisappear();
 
@@ -226,13 +238,13 @@ namespace MarsAdvancedTaskPart2.Pages.Components
             if (EditManageListing.ServiceType == ServiceSelection1.Text)
             {
                 WaitUtils.WaitToBeClickable(driver, "XPath", e_ServiceSelection1XPath, 10);
-               
+
                 ServiceSelection1.Click();
             }
             else
             {
                 WaitUtils.WaitToBeClickable(driver, "XPath", e_ServiceSelection2XPath, 10);
-                
+
                 ServiceSelection2.Click();
             }
 
@@ -256,13 +268,13 @@ namespace MarsAdvancedTaskPart2.Pages.Components
             WaitUtils.WaitToBeClickable(driver, "XPath", e_AvailableDaysEndDateXPath, 10);
             AvailableDaysEndDate.Click();
             AvailableDaysEndDate.SendKeys(EditManageListing.EndDate);
-       
+
 
             // Select Skill Trade or Credit
             if (EditManageListing.SkillTrade == "Skill-exchange")
             {
                 try
-                {                    
+                {
                     WaitUtils.WaitToBeClickable(driver, "XPath", e_SkillTradeSkillExchangeXPath, 50);
                     SkillTradeSkillExchange.Click();
                     WaitUtils.WaitToBeVisible(driver, "XPath", e_SkillExchangeDataXPath, 10);
@@ -306,7 +318,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
 
             //WaitForPopupToDisappear();
 
-           // cancelButton.Click();
+            // cancelButton.Click();
         }
 
         public void ToggleCheckbox(By checkboxLocator)
@@ -358,7 +370,7 @@ namespace MarsAdvancedTaskPart2.Pages.Components
             }
         }
 
-        
+
 
         public string GetErrorMessage()
         {
@@ -378,17 +390,20 @@ namespace MarsAdvancedTaskPart2.Pages.Components
         }
         public void DeleteManageListing(ManageListingsModel DeleteShareSkill)
         {
-            homepageObj.clickmanagelisting();
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            bool isShareSkillFound = false;
+            IWebElement signOutButton = driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
+            signOutButton.Click();
+            loginPageObj.Loginsteps2();
+                homepageObj.clickmanagelisting();
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                bool isShareSkillFound = false;
 
-            while (true)
-            {
-                try
+                while (true)
                 {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"listing-management-section\"]/div[2]/div[1]/div[1]/table/tbody/tr")));
+                    try
+                    {
+                        wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"listing-management-section\"]/div[2]/div[1]/div[1]/table/tbody/tr")));
 
-                    var rows = driver.FindElements(By.XPath("//*[@id=\"listing-management-section\"]/div[2]/div[1]/div[1]/table/tbody/tr"));
+                        var rows = driver.FindElements(By.XPath("//*[@id=\"listing-management-section\"]/div[2]/div[1]/div[1]/table/tbody/tr"));
 
                     foreach (var row in rows)
                     {
@@ -399,30 +414,292 @@ namespace MarsAdvancedTaskPart2.Pages.Components
                         {
                             isShareSkillFound = true;
                             buttonDelete.Click();
-                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(
+                                    By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
                             Selectyesoption.Click();
-                            Thread.Sleep(5000); // Wait for deletion to process
-                            break;
+
+                            bool isErrorMessageDisplayed = false;
+                            try
+                            {
+                                isErrorMessageDisplayed = true;
+                                WaitUtils.WaitToBeVisible(driver, "XPath", e_errormessage, 5);
+                            }
+                            catch (WebDriverTimeoutException)
+                            {
+                                // No error message, confirm the deletion
+                                
+                                Thread.Sleep(3000);
+                                break;
+                            }
+                            if (isErrorMessageDisplayed)
+                            {
+                                HandleErrorScenario();
+                                
+                                break;
+                            }
+                            
                         }
                     }
 
-                    if (!isShareSkillFound)
+                        if (!isShareSkillFound)
+                        {
+                            break;
+                        }
+                    }
+                    catch (NoSuchElementException)
                     {
+                        // No more delete buttons found, break the loop
+                        break;
+                    }
+                    catch (WebDriverTimeoutException)
+                    {
+                        // Delete button not found within wait time, break the loop
+                        break;
+                    }
+
+                }
+            }
+
+        public void CleanlistingData()
+        {
+            IWebElement signOutButton = driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
+            signOutButton.Click();
+            loginPageObj.Loginsteps2();
+            homepageObj.clickmanagelisting();
+
+            while (true)
+            {
+                try
+                {
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+
+                    WaitUtils.WaitToBeVisible(driver, "XPath", e_buttonDelete, 10);
+                    // Find the delete button for the last record
+                    buttonDelete.Click();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
+                    Selectyesoption.Click();
+                    bool isErrorMessageDisplayed = false;
+                    try
+                    {
+                        isErrorMessageDisplayed = true;
+                        WaitUtils.WaitToBeVisible(driver, "XPath", e_errormessage, 5);
+                    }
+                    catch (WebDriverTimeoutException)
+                    {
+                        // No error message, confirm the deletion
+
+                        Thread.Sleep(3000);
+                        break;
+                    }
+                    if (isErrorMessageDisplayed)
+                    {
+                        HandleErrorScenario();
+
                         break;
                     }
                 }
                 catch (NoSuchElementException)
                 {
-                    // No more delete buttons found, break the loop
+                    // Break the loop if no more delete buttons are found
                     break;
                 }
                 catch (WebDriverTimeoutException)
                 {
-                    // Delete button not found within wait time, break the loop
+                    // Break the loop if the delete button is not found within the wait time
                     break;
                 }
             }
         }
+
+
+        public void ClickAnyTab(string tab)
+        {
+            //Wait for tabs to be visible
+            WaitUtils.WaitToBeVisible(driver, "XPath", e_waitForTab, 3);
+
+            //Click on specified tab
+            tabOption.Click();
+        }
+
+
+        private void HandleErrorScenario()
+        {
+            try
+            {
+                // Sign out the current user and log in as the second user
+            commonDriver.SignOut();
+            loginPageObj.Loginsteps();
+
+            // Navigate to the 'Sent Requests' page and withdraw the request
+            homepageObj.clickSentrequest();
+
+            try
+            {
+                // Attempt to withdraw the request
+                WaitUtils.WaitToBeVisible(driver, e_withdraw, 5); // Assuming e_withdraw is the XPath for the withdraw button
+                var withdrawButton = driver.FindElement(By.XPath(e_withdraw)); // Adjust XPath as necessary
+                if (withdrawButton.Displayed)
+                {
+                    manageRequestsObj.withdrawrequest(); // Assuming this method handles the withdrawal
+                    Console.WriteLine("Request successfully withdrawn.");
+                }
+                else
+                {
+                    Console.WriteLine("No withdrawable request found.");
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("Withdraw button not found. No request to withdraw.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during withdrawal: {ex.Message}");
+            }
+
+            // Sign out the second user
+                commonDriver.SignOut();
+            }
+            catch (Exception ex)
+            {
+                   Console.WriteLine($"Error during sign-out or secondary login steps: {ex.Message}");
+            }
+             
+    
+            try
+            {
+        
+                  loginPageObj.Loginsteps2();
+                  homepageObj.clickmanagelisting();
+
+        
+                  WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                  WaitUtils.WaitToBeVisible(driver, "XPath", e_buttonDelete, 10); // Assuming e_buttonDelete is the delete button XPath
+
+        
+                  buttonDelete.Click();
+
+    
+                  wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
+                  Selectyesoption.Click();
+
+       
+                  bool isErrorMessageDisplayed = false;
+            try
+            {
+                  WaitUtils.WaitToBeVisible(driver, "XPath", e_errormessage, 5); // Assuming e_errormessage is the XPath for the error message
+                  isErrorMessageDisplayed = true;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                  // No error message, continue with deletion
+                  Thread.Sleep(3000); // Allow for deletion to complete
+                  return; // Deletion successful, exit the method
+            }
+
+                  // If an error message is displayed, handle it
+            if (isErrorMessageDisplayed)
+            {
+                  Console.WriteLine("Error message displayed. Handling the error.");
+                  HandleErrorScenario2(); // Assuming HandleErrorScenario2 is the method that handles the error scenario
+            }
+        }
+            catch (Exception ex)
+            {
+                      Console.WriteLine($"Error during deletion steps: {ex.Message}");
+            }
+        }
+
+        private void HandleErrorScenario2()
+        {
+            commonDriver.SignOut();
+            // Log in as the second user
+            loginPageObj.Loginsteps2();
+
+            // Navigate to manage requests
+            homepageObj.clickRecievedrequest();
+
+            // Withdraw the request
+            manageRequestsObj.Completerequestofreciver();
+           
+            homepageObj.clickmanagelisting();
+            // Perform the delete operation again
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WaitUtils.WaitToBeVisible(driver, "XPath", e_buttonDelete, 10);
+            // Find the delete button for the last record
+            buttonDelete.Click();
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
+            Selectyesoption.Click();
+            Thread.Sleep(6000);
+            bool isErrorMessageDisplayed = false;
+            try
+            {
+                WaitUtils.WaitToBeVisible(driver, "XPath", e_errormessage, 5); // Assuming e_errormessage is the XPath for the error message
+                isErrorMessageDisplayed = true;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // No error message, continue with deletion
+                Thread.Sleep(3000); // Allow for deletion to complete
+                return; // Deletion successful, exit the method
+            }
+
+            // If an error message is displayed, handle it
+            if (isErrorMessageDisplayed)
+            {
+                Console.WriteLine("Error message displayed. Handling the error.");
+                HandleErrorScenario3(); // Assuming HandleErrorScenario2 is the method that handles the error scenario
+            }
+        }
+        private void HandleErrorScenario3()
+        {
+            commonDriver.SignOut();
+            loginPageObj.Loginsteps();
+            homepageObj.clickSentrequest();
+            manageRequestsObj.Completed();
+            commonDriver.SignOut();
+
+            // Log in as the second user
+            loginPageObj.Loginsteps2();
+
+            // Navigate to manage requests
+            homepageObj.clickRecievedrequest(); 
+            try
+            {
+                // Attempt to withdraw the request
+                WaitUtils.WaitToBeVisible(driver, e_completerequest, 5); // Assuming e_withdraw is the XPath for the withdraw button
+                var withdrawButton = driver.FindElement(By.XPath(e_completerequest)); // Adjust XPath as necessary
+                if (withdrawButton.Displayed)
+                {
+                    manageRequestsObj.Completerequestofreciver(); // Assuming this method handles the withdrawal
+                    Console.WriteLine("Request successfully withdrawn.");
+                }
+                else
+                {
+                    Console.WriteLine("No withdrawable request found.");
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("Withdraw button not found. No request to withdraw.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during withdrawal: {ex.Message}");
+            }
+
+      
+            homepageObj.clickmanagelisting();
+            // Perform the delete operation again
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WaitUtils.WaitToBeVisible(driver, "XPath", e_buttonDelete, 10);
+            // Find the delete button for the last record
+            buttonDelete.Click();
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div[3]/button[2]")));
+            Selectyesoption.Click();
+            Thread.Sleep(6000);
+       }
+
 
         private void WaitForPopupToDisappear()
         {

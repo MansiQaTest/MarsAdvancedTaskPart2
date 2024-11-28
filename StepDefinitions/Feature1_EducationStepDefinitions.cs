@@ -112,8 +112,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             educationobj.ClickAnyTab("Education");
         }
 
-        [When(@"User adds a new Education record from the JSON file")]
-        public void WhenUserAddsANewEducationRecordFromTheJSONFile()
+        [When(@"User adds a new Education record from the AddEducation\.json")]
+        public void WhenUserAddsANewEducationRecordFromTheAddEducation_Json()
         {
             RunEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\AddEducation.json");
             
@@ -151,9 +151,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
                 CommonDriver.EducationDataToCleanUp.Add(degree);
             }
         }
-
-        [When(@"User adds a new Education record from the JSON file where name is empty")]
-        public void WhenUserAddsANewEducationRecordFromTheJSONFileWhereNameIsEmpty()
+        [When(@"User adds a new Education record from the AddEducationDatawithempty\.json where name is empty")]
+        public void WhenUserAddsANewEducationRecordFromTheAddEducationDatawithempty_JsonWhereNameIsEmpty()
         {
             RunEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\AddEducationDatawithempty.json");
         }
@@ -193,14 +192,14 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         }
 
 
-        [When(@"User tries to add the same Education record again")]
-        public void WhenUserTriesToAddTheSameEducationRecordAgain()
+        [When(@"User tries to add the same Education record again from the AddEducationWithDuplicateEntry\.json")]
+        public void WhenUserTriesToAddTheSameEducationRecordAgainFromTheAddEducationWithDuplicateEntry_Json()
         {
             RunEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\AddEducationWithDuplicateEntry.json");
         }
 
-        [When(@"User adds multiple Education records from the JSON file")]
-        public void WhenUserAddsMultipleEducationRecordsFromTheJSONFile()
+        [When(@"User adds multiple Education records from the CreateEduMultipleData\.json")]
+        public void WhenUserAddsMultipleEducationRecordsFromTheCreateEduMultipleData_Json()
         {
             RunEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\CreateEduMultipleData.json");
 
@@ -271,15 +270,15 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"User adds multiple Educations records from the JSON file with invalid input")]
-        public void WhenUserAddsMultipleEducationsRecordsFromTheJSONFileWithInvalidInput()
+        [When(@"User adds Education records from the CreateEducationDatawithinvalidinput\.json with invalid input")]
+        public void WhenUserAddsEducationRecordsFromTheCreateEducationDatawithinvalidinput_JsonWithInvalidInput()
         {
             RunEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\CreateEducationDatawithInvalidinput.json");
         }
 
-     
-        [When(@"User deletes the Education record from the JSON file")]
-        public void WhenUserDeletesTheEducationRecordFromTheJSONFile()
+
+        [When(@"User deletes the Education record from the DeleteEduDataWhichisinthelist\.json")]
+        public void WhenUserDeletesTheEducationRecordFromTheDeleteEduDataWhichisinthelist_Json()
         {
             RunDeleteEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\DeleteEduDataWhichisinthelist.json");
         }
@@ -334,8 +333,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [When(@"User deletes a Education record that is not in the list from the JSON file")]
-        public void WhenUserDeletesAEducationRecordThatIsNotInTheListFromTheJSONFile()
+        [When(@"User deletes a Education record that is not in the list from DeleteEduDataWhichisnotinthelist\.json")]
+        public void WhenUserDeletesAEducationRecordThatIsNotInTheListFromDeleteEduDataWhichisnotinthelist_Json()
         {
             RunDeleteEducationTest(@"D:\MarsAdvancedTaskPart2\TestData\DeleteEduDataWhichisnotinthelist.json");
 

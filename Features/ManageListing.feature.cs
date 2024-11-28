@@ -97,10 +97,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
-testRunner.When("the user modifies the listing details with valid data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("the user modifies the listing details with valid data from EditManageListing.json" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
 testRunner.Then("the listing should be updated with the new details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -133,10 +134,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.When("the user modifies the listing details with invalid data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("The user modifies the listing details with invalid data from EditManageListingwit" +
+                        "hinvalid.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.Then("an error message \"Please complete the form correctly.\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -169,10 +171,11 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-testRunner.When("the user modifies the listing details with empty data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("The user modifies the listing details with empty data from EditManageListingwithe" +
+                        "mpty.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
 testRunner.Then("an error message \"Please complete the form correctly.\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -205,7 +208,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
 testRunner.And("the user views a listing from the listing table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -241,7 +244,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
 testRunner.When("the user deletes an existing listing from the listing table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -277,7 +280,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 43
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 44
 testRunner.When("the user deletes data which is not in the listing table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -313,7 +316,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 50
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 51
 testRunner.And("the user disables the toggle for the listing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -349,7 +352,7 @@ testRunner.Given("User Logs into Mars", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.And("User navigates to ManageListing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 57
-testRunner.When("the user add new listing data from json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("The user adds new listing data from AddManagelistingData.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 58
 testRunner.And("the user disables the toggle for the listing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -372,7 +375,7 @@ testRunner.Then("the toggle should be in the enabled state", ((string)(null)), (
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 Verify user should be able to send request for skill trade", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 62
- this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -382,22 +385,24 @@ testRunner.Then("the toggle should be in the enabled state", ((string)(null)), (
             {
                 this.ScenarioStart();
 #line 63
- testRunner.Given("User logs into Mars and navigates to the Profile tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("User logs into Mars and navigates to the Profile tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 64
- testRunner.And("User creates ShareSkill data and logs out from Mars", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User creates ShareSkill data from AddManagelistingData.json and logs out from Mar" +
+                        "s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 65
- testRunner.When("User logs into Mars with Different user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("User logs into Mars with Different user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 66
- testRunner.And("User searches for the skill and navigates to the skill details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User searches for the skill form SearchSkill.json and navigates to the skill deta" +
+                        "ils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 67
- testRunner.And("User writes a message to the skill owner and sends the request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User writes a message to the skill owner and sends the request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 68
- testRunner.Then("Confirmation message \"Requested\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Confirmation message \"Requested\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

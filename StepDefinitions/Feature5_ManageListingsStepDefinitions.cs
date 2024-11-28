@@ -34,7 +34,7 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         [Given(@"User Logs into Mars")]
         public void GivenUserLogsIntoMars()
         {
-            loginPageObj.Loginsteps();
+            loginPageObj.Loginsteps2();
         }
         private void RunAddListingTest(string jsonDataFile)
         {
@@ -128,15 +128,15 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             homepageObj.clickmanagelisting();
         }
 
-        [When(@"the user add new listing data from json file")]
-        public void WhenTheUserAddNewListingDataFromJsonFile()
+        [When(@"The user adds new listing data from AddManagelistingData\.json")]
+        public void WhenTheUserAddsNewListingDataFromAddManagelistingData_Json()
         {
             RunAddListingTest(@"D:\MarsAdvancedTaskPart2\TestData\AddManagelistingData.json");
 
         }
 
-        [When(@"the user modifies the listing details with valid data from json file")]
-        public void WhenTheUserModifiesTheListingDetailsWithValidDataFromJsonFile()
+        [When(@"the user modifies the listing details with valid data from EditManageListing\.json")]
+        public void WhenTheUserModifiesTheListingDetailsWithValidDataFromEditManageListing_Json()
         {
             RunUpdateListingTest(@"D:\MarsAdvancedTaskPart2\TestData\EditManageListing.json");
         }
@@ -208,8 +208,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
 
         }
 
-        [When(@"the user modifies the listing details with invalid data from json file")]
-        public void WhenTheUserModifiesTheListingDetailsWithInvalidDataFromJsonFile()
+        [When(@"The user modifies the listing details with invalid data from EditManageListingwithinvalid\.json")]
+        public void WhenTheUserModifiesTheListingDetailsWithInvalidDataFromEditManageListingwithinvalid_Json()
         {
             RunUpdateListingTest(@"D:\MarsAdvancedTaskPart2\TestData\EditManageListingwithinvalid.json");
         }
@@ -283,9 +283,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
                 }
             }
         }
-
-        [When(@"the user modifies the listing details with empty data from json file")]
-        public void WhenTheUserModifiesTheListingDetailsWithEmptyDataFromJsonFile()
+        [When(@"The user modifies the listing details with empty data from EditManageListingwithempty\.json")]
+        public void WhenTheUserModifiesTheListingDetailsWithEmptyDataFromEditManageListingwithempty_Json()
         {
             RunUpdateListingTest(@"D:\MarsAdvancedTaskPart2\TestData\EditManageListingwithempty.json");
         }
@@ -567,13 +566,46 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             loginPageObj.Loginsteps2();
         }
 
-        [Given(@"User creates ShareSkill data and logs out from Mars")]
-        public void GivenUserCreatesShareSkillDataAndLogsOutFromMars()
+
+        [Given(@"User creates ShareSkill data from AddManagelistingData\.json and logs out from Mars")]
+        public void GivenUserCreatesShareSkillDataFromAddManagelistingData_JsonAndLogsOutFromMars()
         {
-            RunAddListingTest(@"D:\MarsAdvancedTaskPart2\TestData\AddManagelistingData.json");
-             
-            IWebElement Signout = driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
-            Signout.Click();
+            // Step 1: Run the test to add a listing
+            string jsonFilePath = @"D:\MarsAdvancedTaskPart2\TestData\AddManagelistingData.json";
+            RunAddListingTest(jsonFilePath);
+
+            // Step 2: Read JSON data for validation
+            List<ManageListingsModel> addSkillData = JsonUtils.ReadJsonData<ManageListingsModel>(jsonFilePath);
+            if (addSkillData == null || !addSkillData.Any())
+            {
+                throw new InvalidOperationException("No data was found in the provided JSON file.");
+            }
+
+            // Retrieve the first listing from JSON data
+            ManageListingsModel addedListing = addSkillData.FirstOrDefault();
+            if (addedListing == null || string.IsNullOrEmpty(addedListing.Title))
+            {
+                throw new InvalidOperationException("The added listing does not contain a valid title.");
+            }
+
+            // Step 3: Add the listing title to ManageListingToCleanUp
+            if (ManageListingToCleanUp == null)
+            {
+                ManageListingToCleanUp = new List<string>();
+            }
+            ManageListingToCleanUp.Add(addedListing.Title);
+            Console.WriteLine($"Added listing title to cleanup list: {addedListing.Title}");
+
+            // Step 4: Locate and click the sign-out button
+            try
+            {
+                IWebElement signOutButton = driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
+                signOutButton.Click();
+            }
+            catch (NoSuchElementException)
+            {
+                throw new InvalidOperationException("Sign-out button not found. Ensure the user is on the correct page.");
+            }
         }
 
         [When(@"User logs into Mars with Different user")]
@@ -582,8 +614,8 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             loginPageObj.Loginsteps();
         }
 
-        [When(@"User searches for the skill and navigates to the skill details page")]
-        public void WhenUserSearchesForTheSkillAndNavigatesToTheSkillDetailsPage()
+        [When(@"User searches for the skill form SearchSkill\.json and navigates to the skill details page")]
+        public void WhenUserSearchesForTheSkillFormSearchSkill_JsonAndNavigatesToTheSkillDetailsPage()
         {
             string jsonDataFile = @"D:\MarsAdvancedTaskPart2\TestData\SearchSkill.json";
             List<SearchSkillModel> searchSkilldata = JsonUtils.ReadJsonData<SearchSkillModel>(jsonDataFile);

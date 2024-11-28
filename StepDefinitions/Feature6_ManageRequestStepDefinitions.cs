@@ -18,6 +18,7 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         ManageListings manageListingsObj;
         SearchSkills searchSkillsObj;
         ManageRequests manageRequestsObj;
+        CommonDriver commonDriver;
         List<string> ManageListingDataToCleanUp;
 
         public Feature6_ManageRequestStepDefinitions()
@@ -28,6 +29,7 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             searchSkillsObj = new SearchSkills();
             manageRequestsObj = new ManageRequests();
             ManageListingDataToCleanUp = new List<string>();
+            commonDriver = new CommonDriver();
 
         }
         private void RunAddListingTest(string jsonDataFile)
@@ -59,15 +61,47 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             }
         }
 
-        [Given(@"the Skill Owner logs into Mars and creates a skill and logs out")]
-        public void GivenTheSkillOwnerLogsIntoMarsAndCreatesASkillAndLogsOut()
+        [Given(@"the Skill Owner logs into Mars and creates a skill from AddManagelistingData\.json and logs out")]
+        public void GivenTheSkillOwnerLogsIntoMarsAndCreatesASkillFromAddManagelistingData_JsonAndLogsOut()
         {
             loginPageObj.Loginsteps2();
 
-            RunAddListingTest(@"D:\MarsAdvancedTaskPart2\TestData\AddManagelistingData.json");
+            // Step 1: Run the test to add a listing
+            string jsonFilePath = @"D:\MarsAdvancedTaskPart2\TestData\AddManagelistingData.json";
+            RunAddListingTest(jsonFilePath);
 
-            IWebElement Signout = driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
-            Signout.Click();
+            // Step 2: Read JSON data for validation
+            List<ManageListingsModel> addSkillData = JsonUtils.ReadJsonData<ManageListingsModel>(jsonFilePath);
+            if (addSkillData == null || !addSkillData.Any())
+            {
+                throw new InvalidOperationException("No data was found in the provided JSON file.");
+            }
+
+            // Retrieve the first listing from JSON data
+            ManageListingsModel addedListing = addSkillData.FirstOrDefault();
+            if (addedListing == null || string.IsNullOrEmpty(addedListing.Title))
+            {
+                throw new InvalidOperationException("The added listing does not contain a valid title.");
+            }
+
+            // Step 3: Add the listing title to ManageListingToCleanUp
+            if (ManageListingToCleanUp == null)
+            {
+                ManageListingToCleanUp = new List<string>();
+            }
+            ManageListingToCleanUp.Add(addedListing.Title);
+
+            Console.WriteLine($"Added listing title to cleanup list: {addedListing.Title}");
+
+            // Step 4: Locate and click the sign-out button
+            try
+            {
+              commonDriver.SignOut();
+            }
+            catch (NoSuchElementException)
+            {
+                throw new InvalidOperationException("Sign-out button not found. Ensure the user is on the correct page.");
+            }
 
         }
 
@@ -179,7 +213,7 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
         public void WhenTheRequesterLogsIntoMarsMarksTheRequestAsComplete()
         {
             loginPageObj.Loginsteps();
-            manageRequestsObj.Completerequest();
+            manageRequestsObj.Completed();
         }
 
         [Then(@"the request status should change to ""([^""]*)"" in the Requester's request list")]
@@ -308,7 +342,7 @@ namespace MarsAdvancedTaskPart2.StepDefinitions
             Assert.That(actualTitle, Is.EqualTo(expectedTitle), "The expected message did not appear.");
             Assert.That(actualStatus, Is.EqualTo(expectedStatus), "The expected message did not appear.");
             TakeScreenshotWithPngFormat();
-        }
+        }        
 
 
 

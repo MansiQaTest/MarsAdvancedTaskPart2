@@ -99,7 +99,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.When("the user enters a valid description from the JSON file & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters a valid description from the AddDescription.json file & clicks th" +
+                        "e Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
 testRunner.Then("The description should be saved successfully based on JSON data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -134,7 +135,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.When("the user enters an empty description from the JSON file & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters an empty description from the AddDescriptionwithempty.json file &" +
+                        " clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
 testRunner.Then("an error message \"First character can only be digit or letters\" should be display" +
@@ -170,8 +172,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-testRunner.When("the user enters a description with the Maximum Character Limit from the JSON file" +
-                        " & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters a description with the Maximum Character Limit from the AddDescri" +
+                        "ptionwithMaxlimit.json file & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
 testRunner.Then("Description should be saved successfully based on JSON data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -206,7 +208,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
-testRunner.When("the user enters a description with exceed character limit from the JSON file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters a description with exceed character limit from the AddDescription" +
+                        "withmorethanlimit.json file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 28
 testRunner.Then("Maximum Characters should be add in Description box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -241,7 +244,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
-testRunner.And("User enters a valid description from the JSON file & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("User enters a valid description from the AddDescription.json file & clicks the Sa" +
+                        "ve button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
 testRunner.When("The user clicks the Save button again without Changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -279,7 +283,8 @@ testRunner.Given("User Logs into Mars & navigates to Profile tab", ((string)(nul
 testRunner.And("Edit Description Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
-testRunner.When("the user enters a description from the JSON file & clicks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters a description from the AddDescriptionwithHTMLScript.json file & c" +
+                        "licks the Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
 testRunner.Then("an error message \"First character can only be digit or letters\" should be display" +

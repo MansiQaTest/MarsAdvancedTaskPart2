@@ -18,6 +18,10 @@ namespace MarsAdvancedTaskPart2.Utils
 
         public static void WaitToBeVisible(IWebDriver driver, string locatorType, string locatorValue, int seconds)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver), "Driver cannot be null.");
+            if (string.IsNullOrEmpty(locatorType)) throw new ArgumentNullException(nameof(locatorType), "LocatorType cannot be null or empty.");
+            if (string.IsNullOrEmpty(locatorValue)) throw new ArgumentNullException(nameof(locatorValue), "LocatorValue cannot be null or empty.");
+
             // WebDriverWait webDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
 
